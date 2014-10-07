@@ -106,9 +106,11 @@ sub _plus_coercions :method
 	my $new = _clone($self);
 	if (@new_coercions)
 	{
-		require Moose::Meta::TypeCoercion;
-		$new->coercion(Moose::Meta::TypeCoercion->new)
-			unless $new->has_coercion;
+		my $class = $new->isa('Type::Tiny')
+			? 'Type::Coercion'
+			: 'Moose::Meta::TypeCoercion';
+		eval "require $class" or die($@);
+		$new->coercion($class->new) unless $new->has_coercion;
 		$new->coercion->add_type_coercions(@new_coercions);
 	}
 	return $new;
@@ -133,9 +135,11 @@ sub _minus_coercions :method
 	my $new = _clone($self);
 	if (@keep)
 	{
-		require Moose::Meta::TypeCoercion;
-		$new->coercion(Moose::Meta::TypeCoercion->new)
-			unless $new->has_coercion;
+		my $class = $new->isa('Type::Tiny')
+			? 'Type::Coercion'
+			: 'Moose::Meta::TypeCoercion';
+		eval "require $class" or die($@);
+		$new->coercion($class->new) unless $new->has_coercion;
 		$new->coercion->add_type_coercions(@keep);
 	}
 	return $new;
