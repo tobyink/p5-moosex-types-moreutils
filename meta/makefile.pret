@@ -3,7 +3,14 @@
 @prefix : <http://ontologi.es/doap-deps#>.
 
 `MooseX-Types-MoreUtils`
-	:test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
-	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
+	:runtime-requirement    [ :on "List::Util 1.29"^^:CpanId ];
+	:runtime-recommendation [ :on "B::Hooks::Parser"^^:CpanId ];
+	:runtime-recommendation [ :on "Moose 2.0600"^^:CpanId ];
+	:runtime-suggestion     [ :on "MooseX::Types"^^:CpanId ];
+	:runtime-suggestion     [ :on "Types::Standard"^^:CpanId ];
+	:test-recommendation    [ :on "Moose 2.0600"^^:CpanId ];
+	:test-suggestion        [ :on "MooseX::Types"^^:CpanId ];
+	:test-suggestion        [ :on "Types::Standard 1.000000"^^:CpanId ];
+	:test-requirement       [ :on "Test::Modern"^^:CpanId ];
 	.
 
