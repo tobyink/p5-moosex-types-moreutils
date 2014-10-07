@@ -24,7 +24,9 @@ use strict;
 use warnings;
 use Test::More;
 
-use_ok('MooseX::Types::MoreUtils');
+use MooseX::Types::MoreUtils;
+
+ok 1;
 
 done_testing;
 
