@@ -4,3 +4,8 @@
 	issued  2014-10-07;
 	label   "Initial release".
 
+`MooseX-Types-MoreUtils 0.002 cpan:TOBYINK`
+	issued  2014-10-07;
+	changeset [
+		item "Prevent Moose::Util::TypeConstraints from showing up in the `provides` list."^^Packaging;
+	].
