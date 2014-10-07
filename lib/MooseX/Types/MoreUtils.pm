@@ -41,10 +41,8 @@ sub _reify
 				if ($function)
 				{
 					require Moose::Util::TypeConstraints;
-					package # hide from PAUSE
-						Moose::Util::TypeConstraints;
 					no strict qw(refs);
-					return &$function($value);
+					return &{"Moose::Util::TypeConstraints::$function"}($value);
 				}
 			}
 		}
