@@ -3,6 +3,7 @@
 @prefix : <http://ontologi.es/doap-deps#>.
 
 `MooseX-Types-MoreUtils`
+	:runtime-requirement    [ :on "perl 5.008001"^^:CpanId ];
 	:runtime-requirement    [ :on "List::Util 1.29"^^:CpanId ];
 	:runtime-recommendation [ :on "B::Hooks::Parser"^^:CpanId ];
 	:runtime-recommendation [ :on "Moose 2.0600"^^:CpanId ];
